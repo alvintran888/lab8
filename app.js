@@ -4,7 +4,8 @@ const port = process.env.PORT || 3000;
 const path = require("path");
 
 const mongoose = require("mongoose");
-const studentModel = require("./models/StudentSchema");
+const studentModel = require("./models/KakalotSchema");
+const kakalotModel = require("./models/KakalotSchema");
 const url = "mongodb://localhost:27017/xayda";
 mongoose.connect(url, { useNewUrlParser: true }, (err) => {
   if (err) {
@@ -25,9 +26,9 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.get("/student", (req, res) => {
+app.get("/kakalot", (req, res) => {
   //SQL : select * from student
-  studentModel.find((err, data) => {
+  kakalotModel.find((err, data) => {
     if (err) {
       console.log(err);
     } else {
@@ -36,7 +37,7 @@ app.get("/student", (req, res) => {
       //2. show dữ liệu ra API bằng "send"
       //res.send(data);
       //3. show dữ liệu ra view bằng "render"
-      res.render("student", { students: data });
+      res.render("kakalot", { kakalots: data });
     }
   });
 });
