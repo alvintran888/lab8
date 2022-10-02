@@ -6,7 +6,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const studentModel = require("./models/KakalotSchema");
 const kakalotModel = require("./models/KakalotSchema");
-const url = "mongodb+srv://nghia_tm:Tmnghia730002.@cluster0.vg73gli.mongodb.net/test";
+const url = "mongodb+srv://nghia_tm:Tmnghia730002.@cluster0.vg73gli.mongodb.net/nghianamek";
 mongoose.connect(url, {
     useNewUrlParser: true
 }, (err) => {
